@@ -1,0 +1,26 @@
+void autonomous(void) {
+ // ..........................................................................
+ vexcodeInit();
+ topMotor.setStopping(hold);
+ lowerMotor.setStopping(hold);
+ topMotor.setTimeout(5, seconds);
+ lowerMotor.setTimeout(5, seconds);
+ Drivetrain.turnFor(right, 90, degrees, 50, velocityUnits::pct);
+ Drivetrain.turnFor(left, 90, degrees, 50, velocityUnits::pct);
+ Drivetrain.driveFor(forward, 920, mm);
+ Drivetrain.turnFor(right , 90, degrees, 50, velocityUnits::pct);
+ Drivetrain.turnFor(left, 90, degrees, 50, velocityUnits::pct);
+ Drivetrain.driveFor(reverse, 25, mm);
+ topMotor.spinToPosition(1000, degrees);
+ topMotor.spinToPosition(-1000, degrees);
+ Drivetrain.driveFor(forward, 500, mm);
+ topMotor.spinToPosition(500, degrees);
+ lowerMotor.spinToPosition(500, degrees);
+ Drivetrain.driveFor(reverse, 500, mm);
+ Drivetrain.turnFor(right, 90, degrees, 50, velocityUnits::pct);
+ Drivetrain.turnFor(left, 90, degrees, 50, velocityUnits::pct);
+ Drivetrain.driveFor(forward, 1900, mm);
+ topMotor.spinToPosition(-600, degrees);
+}
+ // ..........................................................................
+}
